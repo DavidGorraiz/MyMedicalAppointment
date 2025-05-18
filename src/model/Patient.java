@@ -53,4 +53,10 @@ public class Patient extends User{
         return super.toString() + "\nAge: " + birthday + "\nWeight: " + getWeight()
                 + "\nHeight: " + getHeight() + "\nBlood: " + blood;
     }
+
+    @Override
+    public void showDataUser() {
+        System.out.println("Paciente");
+        System.out.println("Hostorial completo desde nacimiento");
+    }
 }
