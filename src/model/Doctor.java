@@ -8,6 +8,8 @@ import java.util.Date;
 public class Doctor extends User{
     // Atributos
     private String speciality;
+    // Crea Lista de objetos tipo availableAppointment
+    private ArrayList<AvailableAppointment> availableAppointments = new ArrayList<>();
 
     //  Constructor sin argumentos
     public Doctor(){
@@ -28,8 +30,7 @@ public class Doctor extends User{
         this.speciality = speciality;
     }
 
-    // Crea Lista de objetos tipo availableAppointment
-    ArrayList<AvailableAppointment> availableAppointments = new ArrayList<>();
+
     // Metodo que permite añadir una nueva cita para el doctor
     public void addAvailableAppointment(String date, String time){
         availableAppointments.add(new Doctor.AvailableAppointment(date, time));
