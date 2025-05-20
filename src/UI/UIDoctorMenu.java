@@ -7,7 +7,7 @@ import java.util.Scanner;
 
 public class UIDoctorMenu {
 
-    public static ArrayList<Doctor> doctorsAvailableAppointment;
+    public static ArrayList<Doctor> doctorsAvailableAppointment = new ArrayList<>();
 
     public static void showDoctorMenu() {
         int response = 0;
@@ -24,6 +24,7 @@ public class UIDoctorMenu {
 
             switch (response) {
                 case 1:
+                    showAddAvailableAppointmentMenu();
                     break;
                 case 2:
                     break;
@@ -58,8 +59,12 @@ public class UIDoctorMenu {
                     }
                 }
 
+                String date = "";
                 System.out.println("Insert the date available: [dd/mm/yyyy]");
-                String date = sc.nextLine();
+                do {
+                    date = sc.nextLine();
+                } while (date == "");
+
 
                 System.out.println("Your date is " + date + "\n1. Correct \n2. Change date");
                 int responseDate = sc.nextInt();
@@ -69,13 +74,15 @@ public class UIDoctorMenu {
                 String time = "";
                 do {
                     System.out.println("Insert the time available for date: " + date + " [16:00]");
-                    time = sc.nextLine();
+                    do {
+                        time = sc.nextLine();
+                    }while (time == "");
                     System.out.println("Your time is " + time + "\n1. Correct \n2. Change time");
                     responseTime = sc.nextInt();
 
-                }while (responseTime == 2);
+                } while (responseTime == 2);
 
-                UIMenu.doctorLogged.addAvailableAppointment(date,time);
+                UIMenu.doctorLogged.addAvailableAppointment(date, time);
                 checkDoctorAvailableAppointment(UIMenu.doctorLogged);
 
             }else if (response == 0){

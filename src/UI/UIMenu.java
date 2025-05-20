@@ -43,6 +43,8 @@ public class UIMenu {
                     break;
                 case 0:
                     System.out.println("Thank you for you visit");
+                    // Terminar el programa directamente
+                    System.exit(0);
                     break;
                 default:
                     System.out.println("Please select a correct answer");
@@ -76,6 +78,7 @@ public class UIMenu {
                         //Obtener el usuario logeado
                         doctorLogged = doctor;
                         //showDoctorMenu
+                        UIDoctorMenu.showDoctorMenu();
                     }
                 }
             }
