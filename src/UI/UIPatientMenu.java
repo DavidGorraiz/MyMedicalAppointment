@@ -14,7 +14,7 @@ public class UIPatientMenu {
         do {
             System.out.println("\n\n");
             System.out.println("Patient");
-            System.out.println("Welcome " + UIMenu.patientLogged);
+            System.out.println("Welcome " + UIMenu.patientLogged.getName());
             System.out.println("1. Book an appointment");
             System.out.println("2. My appointment");
             System.out.println("0. Logout");
@@ -92,7 +92,7 @@ public class UIPatientMenu {
                         doctorSelected.getAvailableAppointments().get(indexDate).getTime()
                 );
 
-                showBookAppointmentMenu();
+                showPatientMenu();
             }
 
         }while (response != 0);
@@ -109,9 +109,9 @@ public class UIPatientMenu {
             for (int i = 0; i < UIMenu.patientLogged.getAppointmentDoctors().size(); i++) {
                 int j = i + 1;
                 System.out.println(j + ". " +
-                        "Date: " + UIMenu.patientLogged.getAppointmentDoctors().get(j).getDate() +
-                        "Time: " + UIMenu.patientLogged.getAppointmentDoctors().get(j).getTime() +
-                        "\nDoctor: " + UIMenu.patientLogged.getAppointmentDoctors().get(j).getDoctor().getName());
+                        "Date: " + UIMenu.patientLogged.getAppointmentDoctors().get(i).getDate() +
+                        "Time: " + UIMenu.patientLogged.getAppointmentDoctors().get(i).getTime() +
+                        "\nDoctor: " + UIMenu.patientLogged.getAppointmentDoctors().get(i).getDoctor().getName());
             }
 
             System.out.println("0. Return");
